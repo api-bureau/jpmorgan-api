@@ -1,5 +1,8 @@
 # J.P.Morgan Api
-The purpose of this project is to help you exploring J.P.Morgan APIs and speed up your J.P.Morgan APIs C# and .NET Core implementation.
+The purpose of this project is to help you exploring J.P.Morgan APIs and speed up your J.P.Morgan APIs C# and .NET implementation.
+
+## Getting Started
+[J.P.Morgan Developer Portal](https://developer.payments.jpmorgan.com/)
 
 ## Contributors
 This project adheres following guidelines.
