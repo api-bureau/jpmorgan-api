@@ -4,6 +4,8 @@ The purpose of this project is to help you exploring J.P.Morgan APIs and speed u
 ## Getting Started
 [J.P.Morgan Developer Portal](https://developer.payments.jpmorgan.com/)
 
+The current example is using `https://api-mock.payments.jpmorgan.com` which doesn't require authentication.
+
 ## Contributors
 This project adheres following guidelines.
 - https://github.com/dotnet/runtime/blob/main/docs/coding-guidelines/coding-style.md
