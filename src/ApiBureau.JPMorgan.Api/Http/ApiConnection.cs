@@ -1,4 +1,3 @@
-using IdentityModel.Client;
 using System.Net.Http.Json;
 using System.Text.Json;
 
@@ -48,16 +47,15 @@ public class ApiConnection
 
         if (token.IsError)
         {
-            throw new Exception($"{token.HttpErrorReason}, {token.Raw}");
+            throw new InvalidOperationException($"Unable to retrieve an access token: {token.Error ?? token.HttpErrorReason}");
         }
 
-        if (token is null) return;
-
-        _accessToken = token.AccessToken;
+        _accessToken = token.AccessToken
+            ?? throw new InvalidOperationException("The token response did not contain an access token.");
 
         // Validate access token
 
-        _client.SetBearerToken(_accessToken!);
+        _client.SetBearerToken(_accessToken);
     }
 
     public async Task<T?> GetAsync<T>(string url)
