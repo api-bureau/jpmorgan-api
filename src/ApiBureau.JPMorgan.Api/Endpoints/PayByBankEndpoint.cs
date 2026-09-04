@@ -6,7 +6,7 @@ public class PayByBankEndpoint
 {
     protected ApiConnection ApiConnection { get; }
 
-    private const string BaseUrl = "https://api-mock.payments.jpmorgan.com/tsapi/paybybank/v2/payments";
+    private static readonly Uri BaseUri = new("https://api-mock.payments.jpmorgan.com/tsapi/paybybank/v2/payments");
 
     public PayByBankEndpoint(ApiConnection apiConnection)
     {
@@ -20,7 +20,7 @@ public class PayByBankEndpoint
     /// <returns></returns>
     public async Task<PaymentResponseDto?> RetrievePaymentsAsync(string id)
     {
-        var response = await ApiConnection.GetAsync<PaymentResponseDto>($"{BaseUrl}/{id}");
+        var response = await ApiConnection.GetAsync<PaymentResponseDto>($"{BaseUri}/{id}");
 
         return response;
     }
