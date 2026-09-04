@@ -30,10 +30,10 @@ internal sealed class TokenResponse
     public string? ErrorDescription { get; init; }
 
     [JsonIgnore]
-    public bool IsError { get; init; }
+    internal bool IsError { get; init; }
 
     [JsonIgnore]
-    public string? HttpErrorReason { get; init; }
+    internal string? HttpErrorReason { get; init; }
 }
 
 internal static class OAuthClientExtensions
