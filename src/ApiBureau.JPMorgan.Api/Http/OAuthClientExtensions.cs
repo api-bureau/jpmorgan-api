@@ -6,10 +6,10 @@ namespace ApiBureau.JPMorgan.Api.Http;
 
 internal sealed class ClientCredentialsTokenRequest
 {
-    public required string Address { get; init; }
-    public required string ClientId { get; init; }
-    public required string ClientSecret { get; init; }
-    public string? Scope { get; init; }
+    internal required string Address { get; init; }
+    internal required string ClientId { get; init; }
+    internal required string ClientSecret { get; init; }
+    internal string? Scope { get; init; }
 }
 
 internal sealed class TokenResponse
@@ -38,7 +38,7 @@ internal sealed class TokenResponse
 
 internal static class OAuthClientExtensions
 {
-    public static async Task<TokenResponse> RequestClientCredentialsTokenAsync(
+    internal static async Task<TokenResponse> RequestClientCredentialsTokenAsync(
         this HttpClient client,
         ClientCredentialsTokenRequest request,
         CancellationToken cancellationToken = default)
@@ -83,7 +83,7 @@ internal static class OAuthClientExtensions
         };
     }
 
-    public static void SetBearerToken(this HttpClient client, string token)
+    internal static void SetBearerToken(this HttpClient client, string token)
     {
         ArgumentNullException.ThrowIfNull(client);
         ArgumentException.ThrowIfNullOrWhiteSpace(token);
